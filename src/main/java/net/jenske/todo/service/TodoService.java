@@ -1,5 +1,6 @@
 package net.jenske.todo.service;
 
+import net.jenske.todo.exception.TodoNotFoundException;
 import net.jenske.todo.model.Todo;
 import net.jenske.todo.repository.TodoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -30,11 +31,17 @@ public class TodoService {
         return todoRepository.findById(id);
     }
 
+
+
     public Todo updateTodo(Todo todo) {
         return todoRepository.save(todo);
     }
 
     public void deleteTodo(Long id) {
         todoRepository.deleteById(id);
+    }
+
+    public boolean existsById(Long id) {
+        return todoRepository.existsById(id);
     }
 }
