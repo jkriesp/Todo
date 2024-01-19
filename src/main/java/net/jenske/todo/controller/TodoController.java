@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
+@CrossOrigin(origins = "http://localhost:3000") // React app's URL
 @RequestMapping("/todos")
 public class TodoController {
     private final TodoService todoService;
@@ -33,9 +34,10 @@ public class TodoController {
 
     @PutMapping("/{id}")
     public Todo updateTodo(@PathVariable Long id, @RequestBody Todo todo) {
-        return todoService.getTodoById(id)
-                .map(existingTodo -> todoService.updateTodo(todo))
-                .orElseThrow(() -> new TodoNotFoundException("Todo not found with id: " + id));
+        if (!todo.getId().equals(id) || !todoService.existsById(id)) {
+            throw new TodoNotFoundException("Todo not found with id: " + id);
+        }
+        return todoService.updateTodo(todo);
     }
 
 
