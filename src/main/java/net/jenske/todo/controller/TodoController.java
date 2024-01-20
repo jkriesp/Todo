@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@CrossOrigin(origins = "http://localhost:3000") // React app's URL
+@CrossOrigin(origins = {"http://localhost:3000", "https://fast-stream-09134.herokuapp.com"})
 @RequestMapping("/todos")
 public class TodoController {
     private final TodoService todoService;
