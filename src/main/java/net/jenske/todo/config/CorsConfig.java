@@ -19,7 +19,7 @@ public class CorsConfig {
         // Allow specific origins
         config.setAllowedOrigins(Arrays.asList(
                 "http://localhost:3000",
-                "https://todo-client-7lolmle74-jkriesps-projects.vercel.app"
+                "https://todo-client-beryl.vercel.app/"
         ));
         config.addAllowedHeader("*");
         config.addAllowedMethod("*");
