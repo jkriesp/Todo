@@ -9,9 +9,6 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@CrossOrigin(origins = {
-        "http://localhost:3000",
-        "https://todo-client-7lolmle74-jkriesps-projects.vercel.app"})
 @RequestMapping("/todos")
 public class TodoController {
     private final TodoService todoService;
