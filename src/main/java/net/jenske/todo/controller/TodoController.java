@@ -1,5 +1,6 @@
 package net.jenske.todo.controller;
 
+import jakarta.validation.Valid;
 import net.jenske.todo.exception.TodoNotFoundException;
 import net.jenske.todo.model.Todo;
 import net.jenske.todo.service.TodoService;
@@ -17,7 +18,7 @@ public class TodoController {
         this.todoService = todoService;
     }
     @PostMapping
-    public Todo addTodo(@RequestBody Todo todo) {
+    public Todo addTodo(@Valid @RequestBody Todo todo) {
         return todoService.addTodo(todo);
     }
 
@@ -32,7 +33,7 @@ public class TodoController {
     }
 
     @PutMapping("/{id}")
-    public Todo updateTodo(@PathVariable Long id, @RequestBody Todo todo) {
+    public Todo updateTodo(@PathVariable Long id, @Valid @RequestBody Todo todo) {
         if (!todo.getId().equals(id) || !todoService.existsById(id)) {
             throw new TodoNotFoundException("Todo not found with id: " + id);
         }
