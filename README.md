@@ -120,3 +120,4 @@ This document outlines the Continuous Integration and Continuous Deployment (CI/
 The backend CI/CD pipeline is set up to facilitate efficient, automated deployment of the Spring Boot application, ensuring a streamlined development workflow and consistent deployment practices.
 
 ## Other
+- CI/CD trigger
