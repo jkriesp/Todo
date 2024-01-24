@@ -20,7 +20,9 @@ public class CorsConfig {
         config.setAllowedOrigins(Arrays.asList(
                 "http://localhost:3000",
                 "https://todo-client-beryl.vercel.app",
-                "https://todo-client-git-dev-jkriesps-projects.vercel.app"
+                "https://todo-client-git-dev-jkriesps-projects.vercel.app",
+                "https://todo.jenske.net",
+                "https://todo-dev.jenske.net"
         ));
         config.addAllowedHeader("*");
         config.addAllowedMethod("*");
